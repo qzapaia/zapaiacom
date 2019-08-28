@@ -51,7 +51,7 @@ export default () => (
         color:#ddd;
         text-decoration:none;
         font-family: 'Bungee', cursive;
-        margin:15px;
+        margin:16px;
         transition:all .2s;
       }
       a:hover{
@@ -59,7 +59,7 @@ export default () => (
       }
 
       img{
-        height:40px;
+        height:50px;
       }
 
     `}</style>
