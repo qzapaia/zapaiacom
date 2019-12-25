@@ -7,6 +7,9 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta name="theme-color" content="#ffffff" />
+          <meta name="title" content="Marcelo Zapaia" />        
+          <meta name="description" content="Mi sitio web. Ponele!" />        
+
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
 
