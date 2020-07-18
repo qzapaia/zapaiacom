@@ -1,7 +1,9 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default () => {
+  const randomH = Math.floor(Math.random() * 360);
+
   useEffect(() => {
     // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
     let vh = window.innerHeight * 0.01;
@@ -59,9 +61,20 @@ export default () => {
         * {
           box-sizing: border-box;
         }
+        @keyframes change-bg {
+          0% {
+            background-color: hsla(${randomH}, 75%, 62%, 1);
+          }
+          50% {
+            background-color: hsla(${randomH + 500}, 75%, 62%, 1);
+          }
+          100% {
+            background-color: hsla(${randomH}, 75%, 62%, 1);
+          }
+        }
         body {
           margin: 0;
-          background-color: #d6fb7d;
+          animation: change-bg 30s infinite;
           color: #fafafa;
           font-size: 22px;
         }
@@ -76,18 +89,28 @@ export default () => {
         }
 
         .links-container {
-          max-width: 375px;
+          // max-width: 375px;
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
-
+        @media (max-width: 768px) {
+          .links-container {
+            flex-direction: column;
+          }
+        }
         a {
           color: #ddd;
           text-decoration: none;
           font-family: "Bungee", cursive;
-          margin: 12px;
+          margin: 16px;
           transition: all 0.2s;
+        }
+
+        @media (max-width: 768px) {
+          a {
+            margin: 24px;
+          }
         }
         a.gh {
           margin-left: 10px;
